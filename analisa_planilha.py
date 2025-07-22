@@ -136,7 +136,7 @@ def criar_eventos_google_calendar(eventos):
                 'end': {'dateTime': fim.isoformat(), 'timeZone': 'America/Sao_Paulo'},
             }
 
-            evento_criado = service.events().insert(calendarId='escrevendoquebrada.tecnologia@gmail.com', body=evento).execute()
+            evento_criado = service.events().insert(calendarId='ID DO SEU GOOGLE CALENDAR', body=evento).execute()
             links_criados.append((evento_data.strftime('%d/%m %H:%M'), evento_criado.get('hangoutLink', '')))
 
         print("Eventos criados com sucesso no Google Calendar.")
@@ -154,7 +154,7 @@ def enviar_mensagem_whatsapp(mensagem, grupo):
     log("Iniciando envio de mensagem pelo WhatsApp...")
 
     options = Options()
-    options.add_argument(r"user-data-dir=C:\Users\kimyu\AppData\Local\Google\Chrome\User Data\Profile 7")
+    options.add_argument(r"CAMINHO DO SEU PERFIL")
 
     driver = None
 
@@ -238,7 +238,7 @@ def montar_mensagem(links):
 
 
 if __name__ == "__main__":
-    url_planilha = "https://docs.google.com/spreadsheets/d/1vAvio-OodZEkSMIAxBaOMXGsYClgGtDt9tUTz25Cbbk/edit?usp=sharing"
+    url_planilha = "LINK DA SUA PLANILHA AQUI"
 
     selecionados = analisar_disponibilidade(url_planilha)
 
